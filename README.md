@@ -9,10 +9,4 @@ Once a court and access code have been assigned in the sheet, the admin runs the
 For every row not yet marked complete, the script emails the player their booking details.
 On success, the script writes TRUE to that row's Completed column.
 
-Tool	                                                Purpose
-Python 3.12	                                    Core language
-gspread	                                        Reading from and writing to Google Sheets
-google-auth	                                    Service account authentication
-python-dotenv	                                  Loading credentials from a .env file
-smtplib / email.message (standard library)	    Building and sending email over SSL
-Google Cloud (Sheets API)	                      API access via a service account
+Uses Python, smtplib, Google Cloud API, gspread, google-auth, python-dotenv
