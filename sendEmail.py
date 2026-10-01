@@ -15,7 +15,7 @@ def send_email_booked(email, name, park, date, time, court, code):
     msg["From"] = f"{from_email}"
     msg["To"] = email
     msg["Subject"] = "UoS Tennis Court Booking"
-    msg.set_content(f"Hi {name}, \n\nFor your upcoming court booking, the code is as follows:\n{park}, {date}, {time}, Court {court} - {code}\n\nIf you have any questions or issues on the day, please don't hesitate to contact me. I hope you enjoy your session!\n\nKind regards,\nDaniel")
+    msg.set_content(f"Hi {name}, \n\nFor your upcoming court booking, the details are as follows:\n{park}, {date}, {time}, Court {court} - {code}\n\nIf you have any questions or issues on the day, please don't hesitate to contact me. I hope you enjoy your session!\n\nKind regards,\nDaniel")
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
