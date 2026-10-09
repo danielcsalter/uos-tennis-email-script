@@ -1,11 +1,13 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import os
+from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def get_sheet():
+    load_dotenv()
     scopes = [
         "https://www.googleapis.com/auth/spreadsheets"
     ]
@@ -17,7 +19,7 @@ def get_sheet():
     
     client = gspread.authorize(credentials)
 
-    spreadsheet = client.open_by_key("REMOVED_API_KEY")
+    spreadsheet = client.open_by_key(os.getenv("api_key"))
     sheet = spreadsheet.worksheet("Form responses 1")
 
     return sheet
