@@ -9,7 +9,6 @@ def send_email_booked(email, name, park, date, time, court, code):
     load_dotenv()
     gmail_pass = os.getenv('gmail_pass')
     from_email = os.getenv('gmail_email')
-    from_name = os.getenv('gmail_name')
 
     msg = EmailMessage()
     msg["From"] = f"{from_email}"
@@ -32,7 +31,6 @@ def send_email_unavailable(email, name):
     load_dotenv()
     gmail_pass = os.getenv('gmail_pass')
     from_email = os.getenv('gmail_email')
-    from_name = os.getenv('gmail_name')
 
     msg = EmailMessage()
     msg["From"] = f"{from_email}"
@@ -55,7 +53,6 @@ def send_email_denied(email, name, reason):
     load_dotenv()
     gmail_pass = os.getenv('gmail_pass')
     from_email = os.getenv('gmail_email')
-    from_name = os.getenv('gmail_name')
 
     msg = EmailMessage()
     msg["From"] = f"{from_email}"
